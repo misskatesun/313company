@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>三一三有限公司 | 專業鋁壓鑄、鎂合金、皮膜處理</title>
+    <title>三一三有限公司 | 專業皮膜處理（鋁合金、鎂合金）</title>
     <style>
-        /* 基礎樣式與工業風配色 */
+        /* 基礎樣式 */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,237 +13,198 @@
         }
         body {
             font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-            background-color: #1a1e21; /* 暗黑工業基調 */
+            background-color: #1a1e21; /* 深色背景 */
             color: #e9ecef;
-            line-height: 1.7;
+            line-height: 1.8;
         }
-        a {
-            color: #d4af37;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        a:hover {
-            color: #fff;
+        
+        /* 全域背景裝飾 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, #2c3237 0%, #1a1e21 100%);
+            z-index: -1;
         }
 
-        /* 導覽列 */
         header {
-            background-color: #0f1214;
-            padding: 20px;
+            background-color: rgba(15, 18, 20, 0.95);
+            padding: 25px;
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 3px solid #d4af37;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
         .logo {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             color: #fff;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
         .logo span {
-            color: #d4af37;
-        }
-        nav a {
-            margin-left: 20px;
-            font-size: 16px;
-            color: #a0aab2;
-        }
-        nav a:hover {
             color: #d4af37;
         }
 
         /* 主視覺區 */
         .hero {
-            background: linear-gradient(rgba(26, 30, 33, 0.85), rgba(26, 30, 33, 0.95)), url('313-1.jpg') center/cover no-repeat;
             padding: 100px 20px;
             text-align: center;
-            border-bottom: 1px solid #2c3237;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .hero h1 {
-            font-size: 42px;
+            font-size: 48px;
             color: #fff;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero .subtitle {
+            font-size: 22px;
+            color: #d4af37;
+            font-weight: 500;
+            margin-bottom: 30px;
         }
         .hero p {
             font-size: 18px;
             color: #a0aab2;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-        }
-        .cta-btn {
-            display: inline-block;
-            background-color: #d4af37;
-            color: #1a1e21;
-            padding: 12px 30px;
-            font-weight: bold;
-            border-radius: 4px;
-            font-size: 18px;
-        }
-        .cta-btn:hover {
-            background-color: #fff;
-            color: #1a1e21;
         }
 
-        /* 區塊通用樣式 */
+        /* 核心技術區塊 */
         .section {
-            padding: 80px 20px;
-            max-width: 1200px;
+            padding: 40px 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: #fff;
-            margin-bottom: 50px;
-            position: relative;
-            padding-bottom: 15px;
+        .tech-container {
+            background-color: rgba(36, 42, 47, 0.6);
+            border: 1px solid #343a40;
+            border-radius: 8px;
+            padding: 40px 40px 20px 40px;
+            margin-top: 20px;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
+        .tech-item {
+            margin-bottom: 45px;
+        }
+        .tech-item:last-child {
+            margin-bottom: 20px;
+        }
+        .tech-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .tech-number {
             background-color: #d4af37;
+            color: #1a1e21;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
         }
-
-        /* 項目服務區 */
-        .services-grid {
-            display: block;
-        }
-        .service-card {
-            background-color: #242a2f;
-            border: 1px solid #2c3237;
-            padding: 30px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            border-left: 5px solid #d4af37;
-        }
-        .service-card h3 {
-            font-size: 22px;
+        .tech-item h3 {
+            font-size: 24px;
             color: #fff;
+            letter-spacing: 1px;
+        }
+        
+        /* 條列式樣式調整 */
+        .tech-list {
+            list-style-type: none;
+            padding-left: 47px;
+        }
+        .tech-list li {
+            position: relative;
+            padding-left: 20px;
             margin-bottom: 12px;
+            font-size: 16px;
+            color: #adb5bd;
         }
-        .service-card p {
-            color: #a0aab2;
-            font-size: 15px;
+        .tech-list li::before {
+            content: "▪";
+            color: #d4af37;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 16px;
         }
-
-        /* 圖片展示區 */
-        .gallery-grid {
-            display: block;
-        }
-        .gallery-item {
-            background-color: #242a2f;
-            border: 1px solid #2c3237;
-            margin-bottom: 30px;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-info {
-            padding: 15px;
-        }
-        .gallery-info h4 {
+        .tech-list li b {
             color: #fff;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        .copyright-tag {
-            font-size: 11px;
-            color: #6c757d;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-        .copyright-tag a {
-            color: #868e96;
-            text-decoration: underline;
         }
 
-        /* 聯絡資訊區 */
+        /* 聯絡資訊 */
         .contact-box {
             background-color: #0f1214;
-            border: 1px solid #2c3237;
-            padding: 40px 30px;
-            border-radius: 6px;
+            border: 1px solid #d4af37;
+            padding: 50px 30px;
+            border-radius: 8px;
             text-align: center;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 40px auto 60px auto;
         }
         .contact-item {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
+        }
+        .contact-item:last-child {
+            margin-bottom: 0;
         }
         .contact-item h4 {
             color: #d4af37;
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
         }
         .contact-item p {
-            font-size: 20px;
+            font-size: 22px;
             color: #fff;
         }
         .phone-link {
-            font-size: 24px !important;
+            font-size: 28px;
             font-weight: bold;
-            color: #fff !important;
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
         }
         .phone-link:hover {
-            color: #d4af37 !important;
+            color: #d4af37;
+        }
+        .address-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: transparent;
+            color: #adb5bd;
+            padding: 8px 20px;
+            border: 1px solid #495057;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .address-btn:hover {
+            border-color: #d4af37;
+            color: #fff;
         }
 
-        /* 頁尾 */
         footer {
-            background-color: #090a0b;
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             color: #6c757d;
             font-size: 14px;
-            border-top: 1px solid #1a1e21;
+            border-top: 1px solid #2c3237;
         }
 
-        /* 電腦端與大螢幕排版優化 (替代 Flex/Grid 確保高度相容性) */
-        @media (min-width: 768px) {
-            .services-grid {
-                display: table;
-                width: 100%;
-                table-layout: fixed;
-                border-collapse: separate;
-                border-spacing: 20px 0;
-            }
-            .service-card {
-                display: table-cell;
-                vertical-align: top;
-                height: 100%;
-                margin-bottom: 0;
-            }
-            .gallery-grid {
-                display: table;
-                width: 100%;
-                table-layout: fixed;
-                border-collapse: separate;
-                border-spacing: 20px 0;
-            }
-            .gallery-item {
-                display: table-cell;
-                vertical-align: top;
-                width: 25%;
-                margin-bottom: 0;
-            }
+        /* 手機調整 */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .hero .subtitle { font-size: 18px; }
+            .tech-item h3 { font-size: 20px; }
+            .tech-list { padding-left: 0; }
+            .phone-link { font-size: 22px; }
         }
     </style>
 </head>
@@ -251,115 +212,65 @@
 
     <header>
         <div class="logo">三一三<span>有限公司</span></div>
-        <nav>
-            <a href="#about">關於我們</a>
-            <a href="#services">核心項目</a>
-            <a href="#gallery">項目展示</a>
-            <a href="#contact">聯絡我們</a>
-        </nav>
     </header>
 
     <section class="hero">
-        <h1>專注細節 的 專業鋁壓鑄技術</h1>
-        <p>提供高品質鋁合金、鎂合金壓鑄與高標準皮膜表面處理，以嚴謹的製程與豐富經驗，滿足您對精密金屬零件的嚴格要求。</p>
-        <a href="#contact" class="cta-btn">立即聯絡我們</a>
+        <h1>專業皮膜處理</h1>
+        <div class="subtitle">專精 鋁合金 / 鎂合金 表面改質技術</div>
+        <p>憑藉深厚的化學皮膜經驗與嚴謹的製程管控，我們為各類精密金屬鑄件與加工件提供最可靠的表面防護方案，協助您的產品大幅提升耐用度與品質穩定性。</p>
     </section>
 
-    <section id="about" class="section" style="padding-bottom: 40px;">
-        <h2 class="section-title">關於三一三</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #a0aab2;">
-            三一三有限公司深耕金屬加工與壓鑄領域，致力於為客戶提供從模具開發、精密壓鑄到表面皮膜處理的一條龍專業服務。我們憑藉穩定的品質與優異的技術，成為眾多工業與製造業夥伴最信賴的後盾。
-        </p>
-    </section>
+    <section class="section">
+        <div class="tech-container">
+            <div class="tech-item">
+                <div class="tech-header">
+                    <div class="tech-number">1</div>
+                    <h3>環保無鉻皮膜處理 (Chrome-Free)</h3>
+                </div>
+                <ul class="tech-list">
+                    <li><b>符合綠色環保規範：</b> 全面導入符合國際 <b>RoHS、REACH</b> 標準之環保無鉻化製程。</li>
+                    <li><b>環境與安全友善：</b> 使用之藥水配方對環境無毒害，製程安全、符合綠色供應鏈標準。</li>
+                    <li><b>極佳的塗裝附著力：</b> 轉化後的皮膜能與金屬基底緊密結合，大幅增強噴漆、烤漆等後續塗裝的密著度，有效防止油漆剝落。</li>
+                    <li><b>基材適用性廣：</b> 專注於鋁合金、鎂合金件的表面晶格改質，成膜均勻、品質穩定。</li>
+                </ul>
+            </div>
 
-    <section id="services" class="section">
-        <h2 class="section-title">核心項目</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>專業鋁壓鑄</h3>
-                <p>運用現代化高壓壓鑄設備，提供尺寸精準、結構緻密、表面平整度高的精密鋁結晶鑄件。適合汽機車零件、電子外殼及各類機械五金組件。</p>
-            </div>
-            <div class="service-card">
-                <h3>鋁合金加工</h3>
-                <p>精選各級優質鋁合金原材料，結合高剛性成型技術，在高強度與輕量化之間取得完美平衡，滿足多元產業的定製化需求。</p>
-            </div>
-            <div class="service-card">
-                <h3>鎂合金壓鑄</h3>
-                <p>針對極致輕量化與優異散熱需求的產品，提供高技術門檻的鎂合金壓鑄方案。具備極佳的薄肉成型能力與抗震減噪特性。</p>
-            </div>
-            <div class="service-card">
-                <h3>皮膜表面處理</h3>
-                <p>完備的後處理皮膜製程，有效提升金屬鑄件的耐腐蝕性、抗氧化能力及絕緣/導電機能，同時增強後續塗裝的附著力。</p>
+            <div class="tech-item">
+                <div class="tech-header">
+                    <div class="tech-number">2</div>
+                    <h3>客製化耐鹽霧防蝕需求 (Salt Spray Test)</h3>
+                </div>
+                <ul class="tech-list">
+                    <li><b>時數客製化調整：</b> 可依客戶產品的實際應用環境，彈性優化皮膜厚度與製程參數。</li>
+                    <li><b>滿足各級工業標準：</b> 支援客戶指定的耐鹽霧測試需求（如 <b>48小時、96小時</b> 或更高級別之特殊規範）。</li>
+                    <li><b>卓越的高抗氧化能力：</b> 有效阻絕外界水氣與鹽分侵蝕，大幅延緩金屬氧化氧化反應。</li>
+                    <li><b>多元產品應用：</b> 廣泛適用於對防腐蝕要求嚴苛之戶外通訊設備、汽機車零組件、電子產品精密外殼及各類工業五金。</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="gallery" class="section">
-        <h2 class="section-title">項目與製程展示</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="313-1.jpg" alt="精密壓鑄件結構展示">
-                <div class="gallery-info">
-                    <h4>精密大型壓鑄成型</h4>
-                    <div class="copyright-tag">
-                        由 160SX (talk) - 160SX (talk)'s file, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=7899838" target="_blank">來源連結</a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="313-2.jpg" alt="高精度機械組件">
-                <div class="gallery-info">
-                    <h4>精密齒輪與套筒加工</h4>
-                    <div class="copyright-tag">
-                        <a href="https://www.magnific.com/free-photo/gears-cogwheels_1026588.htm" target="_blank">Image by onlyyouqj on Magnific</a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="313-3.jpg" alt="金屬管件與結構件">
-                <div class="gallery-info">
-                    <h4>工業級金屬管件排列</h4>
-                    <div class="copyright-tag">
-                        <a href="https://www.magnific.com/free-photo/steel-pipes-put-together_995100.htm" target="_blank">Image by onlyyouqj on Magnific</a>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="313-4.jpg" alt="工廠原料與製品儲備">
-                <div class="gallery-info">
-                    <h4>製品儲備與包裝前準備</h4>
-                    <div class="copyright-tag">
-                        Image by <a href="https://pixabay.com/users/ziodanilo-5097148/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2542942" target="_blank">ziodanilo</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2542942" target="_blank">Pixabay</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2 class="section-title">聯絡我們</h2>
+    <section class="section" style="padding-top: 0;">
         <div class="contact-box">
             <div class="contact-item">
-                <h4>公司名稱</h4>
-                <p>三一三有限公司</p>
-            </div>
-            <div class="contact-item">
-                <h4>服務專線</h4>
+                <h4>業務聯繫</h4>
                 <p><a href="tel:0911955901" class="phone-link">王先生 0911-955-901</a></p>
-                <span style="font-size: 12px; color: #6c757d;">(手機點擊可直接撥號)</span>
+                <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">(點擊號碼可直接撥打)</div>
             </div>
+            
             <div class="contact-item">
-                <h4>廠址資訊</h4>
-                <p style="font-size: 18px; margin-bottom: 10px;">813高雄市左營區新上里富國路371號</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=813高雄市左營區新上里富國路371號" target="_blank" style="display: inline-block; background-color: #2c3237; color: #fff; padding: 6px 15px; font-size: 14px; border-radius: 4px; border: 1px solid #495057;">
-                    🗺️ 在 Google 地圖上查看
+                <h4>公司地址</h4>
+                <p>813高雄市左營區新上里富國路371號</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=813高雄市左營區新上里富國路371號" target="_blank" class="address-btn">
+                    在 Google 地圖上查看
                 </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 三一三有限公司 版權所有。專業鋁壓鑄、鎂合金、皮膜處理專家。</p>
+        <p>© 2026 三一三有限公司 版權所有</p>
+        <p style="margin-top: 5px; font-size: 12px; opacity: 0.7;">專業皮膜處理 | 鋁合金表面處理 | 鎂合金轉化膜</p>
     </footer>
 
 </body>
